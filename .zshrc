@@ -36,6 +36,12 @@ zstyle ':completion:*' verbose true
 # Custom Alias
 alias ls="ls --color='always'"
 
+# Key bindings
+bindkey "\e[1;5C" forward-word   # Ctrl + →
+bindkey "\e[1;5D" backward-word  # Ctrl + ←
+bindkey "\e[H" beginning-of-line  # Home
+bindkey "\e[F" end-of-line        # End
+
 # Oh My Posh
 export PATH=$PATH:/home/andres/.local/bin
 eval "$(oh-my-posh init zsh --config "$HOME/dotfiles/OhMyPosh/ohmyposh.json")"
