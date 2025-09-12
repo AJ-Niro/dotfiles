@@ -19,6 +19,9 @@ return {
     { "<bs>", desc = "Decrement Selection", mode = "x" },
   },
   opts_extend = { "ensure_installed" },
+  dependencies = {
+    "windwp/nvim-ts-autotag",
+  },
   ---@type TSConfig
   ---@diagnostic disable-next-line: missing-fields
   opts = {
@@ -57,6 +60,12 @@ return {
         goto_previous_start = { ["[f"] = "@function.outer", ["[c"] = "@class.outer", ["[a"] = "@parameter.inner" },
         goto_previous_end = { ["[F"] = "@function.outer", ["[C"] = "@class.outer", ["[A"] = "@parameter.inner" },
       },
+    },
+    autotag = {
+      enable = true,
+      enable_close = true,
+      enable_rename = true,
+      enable_close_on_slash = false,
     },
   },
   ---@param opts TSConfig
