@@ -9,7 +9,6 @@ return {
         cursor = true,
         diagnostic = true,
         gitsigns = true,
-        search = true,
       },
     },
   },
