@@ -43,7 +43,7 @@ bindkey "\e[H" beginning-of-line  # Home
 bindkey "\e[F" end-of-line        # End
 
 # Oh My Posh
-export PATH=$PATH:/home/andres/.local/bin
+export PATH="$PATH:$HOME/.local/bin"
 eval "$(oh-my-posh init zsh --config "$HOME/dotfiles/OhMyPosh/ohmyposh.json")"
 
 # Load local/private customizations (if present)
