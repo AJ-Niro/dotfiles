@@ -40,13 +40,12 @@
         },
         {
           "options": {
-            "fetch_status": true,
-            "fetch_upstream_icon": true
+            "fetch_status": true
           },
           "style": "diamond",
           "leading_diamond": "<transparent,darkGray></>",
           "trailing_diamond": "",
-          "template": " {{ .UpstreamIcon }}{{ .HEAD }}{{ if .Staging.Changed }}  {{ .Staging.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Working.Changed }}  {{ .Working.String }}{{ end }}{{ if gt .StashCount 0 }}  {{ .StashCount }}{{ end }} ",
+          "template": " {{ .HEAD }}{{ if .Ahead }} {{ .Var.git_ahead }}{{ .Ahead }}{{ end }}{{ if .Behind }} {{ .Var.git_behind }}{{ .Behind }}{{ end }}{{ if .UpstreamGone }} {{ .Var.git_upstream_gone }}{{ end }}{{ if .Rebase }} {{ .Var.git_rebase }} rebase{{ end }}{{ if .Merge }} {{ .Var.git_merge }} merge{{ end }}{{ if .CherryPick }} {{ .Var.git_cherry_pick }} cherry-pick{{ end }}{{ if .Staging.Changed }} {{ .Var.git_staged }}{{ if .Staging.Added }} +{{ .Staging.Added }}{{ end }}{{ if .Staging.Modified }} ~{{ .Staging.Modified }}{{ end }}{{ if .Staging.Deleted }} -{{ .Staging.Deleted }}{{ end }}{{ end }}{{ if and .Working.Changed .Staging.Changed }} |{{ end }}{{ if .Working.Changed }} {{ .Var.git_unstaged }}{{ if .Working.Added }} +{{ .Working.Added }}{{ end }}{{ if .Working.Modified }} ~{{ .Working.Modified }}{{ end }}{{ if .Working.Deleted }} -{{ .Working.Deleted }}{{ end }}{{ end }}{{ if gt .StashCount 0 }} {{ .Var.git_stash }} {{ .StashCount }}{{ end }} ",
           "foreground": "black",
           "background": "darkGray",
           "type": "git"
@@ -74,5 +73,16 @@
     }
   ],
   "version": 3,
-  "final_space": true
+  "final_space": true,
+  "var": {
+    "git_ahead": "↑",
+    "git_behind": "↓",
+    "git_upstream_gone": "",
+    "git_rebase": "",
+    "git_merge": "",
+    "git_cherry_pick": "",
+    "git_staged": "",
+    "git_unstaged": "",
+    "git_stash": ""
+  }
 }
