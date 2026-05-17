@@ -13,42 +13,135 @@
       "segments": [
         {
           "style": "diamond",
-          "leading_diamond": "\n",
-          "trailing_diamond": "",
           "template": "{{.Icon}} ",
           "foreground": "black",
           "background": "darkGray",
-          "type": "os"
+          "type": "os",
+          "leading_diamond": "\n",
+          "trailing_diamond": ""
         },
         {
           "style": "diamond",
-          "leading_diamond": "<transparent,darkGray></>",
-          "trailing_diamond": "",
           "template": " {{ .UserName }}@{{ .HostName }} ",
           "foreground": "black",
           "background": "darkGray",
-          "type": "session"
+          "type": "session",
+          "leading_diamond": "<transparent,darkGray></>",
+          "trailing_diamond": ""
         },
         {
           "style": "diamond",
-          "leading_diamond": "<transparent,darkGray></>",
-          "trailing_diamond": "",
-          "template": "  {{ .Path }} ",
+          "template": " {{ .Var.path_dir }} {{ .Path }} ",
           "foreground": "black",
           "background": "darkGray",
-          "type": "path"
+          "type": "path",
+          "leading_diamond": "<transparent,darkGray></>",
+          "trailing_diamond": ""
         },
         {
           "options": {
             "fetch_status": true
           },
           "style": "diamond",
-          "leading_diamond": "<transparent,darkGray></>",
-          "trailing_diamond": "",
           "template": " {{ .HEAD }}{{ if .Ahead }} {{ .Var.git_ahead }}{{ .Ahead }}{{ end }}{{ if .Behind }} {{ .Var.git_behind }}{{ .Behind }}{{ end }}{{ if .UpstreamGone }} {{ .Var.git_upstream_gone }}{{ end }}{{ if .Rebase }} {{ .Var.git_rebase }} rebase{{ end }}{{ if .Merge }} {{ .Var.git_merge }} merge{{ end }}{{ if .CherryPick }} {{ .Var.git_cherry_pick }} cherry-pick{{ end }}{{ if .Staging.Changed }} {{ .Var.git_staged }}{{ if .Staging.Added }} +{{ .Staging.Added }}{{ end }}{{ if .Staging.Modified }} ~{{ .Staging.Modified }}{{ end }}{{ if .Staging.Deleted }} -{{ .Staging.Deleted }}{{ end }}{{ end }}{{ if and .Working.Changed .Staging.Changed }} |{{ end }}{{ if .Working.Changed }} {{ .Var.git_unstaged }}{{ if .Working.Added }} +{{ .Working.Added }}{{ end }}{{ if .Working.Modified }} ~{{ .Working.Modified }}{{ end }}{{ if .Working.Deleted }} -{{ .Working.Deleted }}{{ end }}{{ end }}{{ if gt .StashCount 0 }} {{ .Var.git_stash }} {{ .StashCount }}{{ end }} ",
           "foreground": "black",
           "background": "darkGray",
-          "type": "git"
+          "type": "git",
+          "leading_diamond": "<transparent,darkGray></>",
+          "trailing_diamond": ""
+        },
+        {
+          "type": "go",
+          "style": "diamond",
+          "foreground": "black",
+          "background": "darkGray",
+          "template": " {{ .Var.lang_go }} {{ .Full }} ",
+          "leading_diamond": "<transparent,darkGray></>",
+          "trailing_diamond": "",
+          "options": {
+            "display_mode": "files",
+            "cache_duration": "24h"
+          }
+        },
+        {
+          "type": "python",
+          "style": "diamond",
+          "foreground": "black",
+          "background": "darkGray",
+          "template": " {{ .Var.lang_python }}{{ if .Venv }} {{ .Venv }}{{ end }} {{ .Full }} ",
+          "leading_diamond": "<transparent,darkGray></>",
+          "trailing_diamond": "",
+          "options": {
+            "display_mode": "files",
+            "cache_duration": "24h",
+            "fetch_virtual_env": true
+          }
+        },
+        {
+          "type": "node",
+          "style": "diamond",
+          "foreground": "black",
+          "background": "darkGray",
+          "template": " {{ .Var.lang_node }} {{ .Full }}{{ if .PackageManagerIcon }} {{ .PackageManagerIcon }}{{ end }} ",
+          "leading_diamond": "<transparent,darkGray></>",
+          "trailing_diamond": "",
+          "options": {
+            "display_mode": "files",
+            "cache_duration": "24h",
+            "fetch_package_manager": true
+          }
+        },
+        {
+          "type": "lua",
+          "style": "diamond",
+          "foreground": "black",
+          "background": "darkGray",
+          "template": " {{ .Var.lang_lua }} {{ .Full }} ",
+          "leading_diamond": "<transparent,darkGray></>",
+          "trailing_diamond": "",
+          "options": {
+            "display_mode": "files",
+            "cache_duration": "24h"
+          }
+        },
+        {
+          "type": "kotlin",
+          "style": "diamond",
+          "foreground": "black",
+          "background": "darkGray",
+          "template": " {{ .Var.lang_kotlin }} {{ .Full }} ",
+          "leading_diamond": "<transparent,darkGray></>",
+          "trailing_diamond": "",
+          "options": {
+            "display_mode": "files",
+            "cache_duration": "24h"
+          }
+        },
+        {
+          "type": "java",
+          "style": "diamond",
+          "foreground": "black",
+          "background": "darkGray",
+          "template": " {{ .Var.lang_java }} {{ .Full }} ",
+          "leading_diamond": "<transparent,darkGray></>",
+          "trailing_diamond": "",
+          "options": {
+            "display_mode": "files",
+            "cache_duration": "24h"
+          }
+        },
+        {
+          "type": "rust",
+          "style": "diamond",
+          "foreground": "black",
+          "background": "darkGray",
+          "template": " {{ .Var.lang_rust }} {{ .Full }} ",
+          "leading_diamond": "<transparent,darkGray></>",
+          "trailing_diamond": "",
+          "options": {
+            "display_mode": "files",
+            "cache_duration": "24h"
+          }
         }
       ]
     },
@@ -83,6 +176,15 @@
     "git_cherry_pick": "",
     "git_staged": "",
     "git_unstaged": "",
-    "git_stash": ""
+    "git_stash": "",
+    "path_dir": "",
+    "prompt_arrow": "❯",
+    "lang_go": "",
+    "lang_python": "",
+    "lang_node": "",
+    "lang_lua": "",
+    "lang_kotlin": "",
+    "lang_java": "",
+    "lang_rust": ""
   }
 }
