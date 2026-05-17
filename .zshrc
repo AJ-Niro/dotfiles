@@ -34,6 +34,7 @@ zstyle ':completion:*' group-name ''
 zstyle ':completion:*' verbose true
 zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
+zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
 # Custom Alias
 alias ls="ls --color='always'"
@@ -54,6 +55,7 @@ source "$_OMP_CACHE"
 
 # Shell integrations
 eval "$(fzf --zsh)"
+eval "$(zoxide init zsh)"
 
 # Load local/private customizations (if present)
 if [ -f "$HOME/.zshrc.local" ]; then
