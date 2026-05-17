@@ -8,10 +8,13 @@ fi
 
 source "${ZINIT_HOME}/zinit.zsh"
 
-# ZSH Plugins
-zinit light zsh-users/zsh-syntax-highlighting
-zinit light zsh-users/zsh-completions
+# ZSH Plugins (autosuggestions and completions deferred until after prompt)
+zinit ice wait lucid
 zinit light zsh-users/zsh-autosuggestions
+zinit ice wait lucid
+zinit light zsh-users/zsh-completions
+zinit ice wait lucid atinit"zicompinit; zicdreplay"
+zinit light zsh-users/zsh-syntax-highlighting
 
 # Setup history searching
 HISTSIZE=5000
@@ -26,8 +29,7 @@ setopt hist_save_no_dups
 setopt hist_ignore_dups
 setopt hist_find_no_dups
 
-# Load completion
-autoload -U compinit && compinit
+# Completion styles (compinit itself is handled by fast-syntax-highlighting's atinit)
 zstyle ':completion:*' menu select
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 zstyle ':completion:*' group-name ''
@@ -42,9 +44,13 @@ bindkey "\e[1;5D" backward-word  # Ctrl + ←
 bindkey "\e[H" beginning-of-line  # Home
 bindkey "\e[F" end-of-line        # End
 
-# Oh My Posh
+# Oh My Posh (cached — avoids subprocess on every shell start)
 export PATH="$PATH:$HOME/.local/bin"
-eval "$(oh-my-posh init zsh --config "$HOME/dotfiles/OhMyPosh/ohmyposh.json")"
+_OMP_CACHE="$HOME/.cache/omp_init.zsh"
+if [[ ! -f "$_OMP_CACHE" || "$HOME/dotfiles/OhMyPosh/ohmyposh.json" -nt "$_OMP_CACHE" ]]; then
+  oh-my-posh init zsh --config "$HOME/dotfiles/OhMyPosh/ohmyposh.json" > "$_OMP_CACHE"
+fi
+source "$_OMP_CACHE"
 
 # Load local/private customizations (if present)
 if [ -f "$HOME/.zshrc.local" ]; then
