@@ -9,11 +9,8 @@ fi
 source "${ZINIT_HOME}/zinit.zsh"
 
 # ZSH Plugins (autosuggestions and completions deferred until after prompt)
-zinit ice wait lucid
 zinit light zsh-users/zsh-autosuggestions
-zinit ice wait lucid
 zinit light zsh-users/zsh-completions
-zinit ice wait lucid atinit"zicompinit; zicdreplay"
 zinit light zsh-users/zsh-syntax-highlighting
 
 # Setup history searching
