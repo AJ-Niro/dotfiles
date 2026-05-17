@@ -39,8 +39,7 @@
           "type": "path"
         },
         {
-          "properties": {
-            "fetch_stash_count": true,
+          "options": {
             "fetch_status": true,
             "fetch_upstream_icon": true
           },
@@ -59,7 +58,7 @@
       "alignment": "left",
       "segments": [
         {
-          "properties": {
+          "options": {
             "always_enabled": true
           },
           "style": "plain",
