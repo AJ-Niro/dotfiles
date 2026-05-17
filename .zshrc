@@ -9,6 +9,7 @@ fi
 source "${ZINIT_HOME}/zinit.zsh"
 
 # ZSH Plugins (autosuggestions and completions deferred until after prompt)
+zinit light Aloxaf/fzf-tab
 zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-syntax-highlighting
@@ -31,6 +32,8 @@ zstyle ':completion:*' menu select
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*' verbose true
+zstyle ':completion:*' menu no
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 
 # Custom Alias
 alias ls="ls --color='always'"
@@ -48,6 +51,9 @@ if [[ ! -f "$_OMP_CACHE" || "${XDG_CONFIG_HOME:-$HOME/.config}/oh-my-posh/ohmypo
   oh-my-posh init zsh --config "${XDG_CONFIG_HOME:-$HOME/.config}/oh-my-posh/ohmyposh.json" > "$_OMP_CACHE"
 fi
 source "$_OMP_CACHE"
+
+# Shell integrations
+eval "$(fzf --zsh)"
 
 # Load local/private customizations (if present)
 if [ -f "$HOME/.zshrc.local" ]; then
