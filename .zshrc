@@ -55,7 +55,7 @@ source "$_OMP_CACHE"
 
 # Shell integrations
 eval "$(fzf --zsh)"
-eval "$(zoxide init zsh)"
+eval "$(zoxide init --cmd cd zsh)"
 
 # Load local/private customizations (if present)
 if [ -f "$HOME/.zshrc.local" ]; then
