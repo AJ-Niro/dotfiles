@@ -1,5 +1,6 @@
 local config = require("config")
 local apps = config.apps
+local workspaces = config.workspaces
 
 ------------------
 ---- MONITORS ----
@@ -23,6 +24,7 @@ hl.monitor({
 -- Or execute your favorite apps at launch like this:
 --
 hl.on("hyprland.start", function()
+	hl.dispatch(hl.dsp.focus({ workspace = workspaces.default }))
 	hl.exec_cmd(apps.terminal)
 	--   hl.exec_cmd("nm-applet")
 	--   hl.exec_cmd("waybar & hyprpaper & firefox")
