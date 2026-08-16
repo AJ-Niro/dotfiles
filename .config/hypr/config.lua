@@ -16,6 +16,7 @@ return {
 	-- APPLICATIONS
 	apps = {
 		terminal = "kitty",
+		quickshell = "qs",
 		file_manager = "nautilus",
 		launcher = "rofi -show run",
 	},

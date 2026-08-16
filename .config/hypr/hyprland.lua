@@ -24,6 +24,7 @@ hl.monitor({
 -- Or execute your favorite apps at launch like this:
 --
 hl.on("hyprland.start", function()
+	hl.exec_cmd(apps.quickshell)
 	hl.dispatch(hl.dsp.focus({ workspace = workspaces.default }))
 	hl.exec_cmd(apps.terminal)
 	--   hl.exec_cmd("nm-applet")
