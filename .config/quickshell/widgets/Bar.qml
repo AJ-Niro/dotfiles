@@ -21,5 +21,12 @@ PanelWindow {
         Workspaces { fontFamily: Theme.fontFamily }
 
         Item { Layout.fillWidth: true }
+
+        Battery {
+          fontFamily: Theme.fontFamily
+          fontSize: Theme.fontSize
+          iconSize: Theme.fontSize + 2
+        }
+
     }
 }
