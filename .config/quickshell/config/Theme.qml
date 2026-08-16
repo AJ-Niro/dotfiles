@@ -3,6 +3,7 @@ import QtQuick
 
 QtObject {
   readonly property string fontFamily: "CaskaydiaCove Nerd Font Propo"
+  readonly property int fontSize: 14
 
   // ---------------------------
   // ---- TOKYO NIGHT THEME ----
