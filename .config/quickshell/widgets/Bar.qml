@@ -49,8 +49,13 @@ PanelWindow {
           anchors.verticalCenter: parent.verticalCenter
           spacing: sectionsSpacing
 
+          SystemTray {
+            fontFamily: Theme.fontFamily
+            iconSize: Theme.fontSize + 2
+            blacklist: ["network"]
+          }
+
           Battery {
-              fontFamily: Theme.fontFamily
               fontSize: Theme.fontSize
               iconSize: Theme.fontSize + 2
           }
