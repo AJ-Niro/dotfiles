@@ -4,6 +4,7 @@ local config = require("config")
 local keys = config.keyboard.keys
 local apps = config.apps
 local workspaces = config.workspaces
+local layouts = config.layouts.order
 local system_controls = config.system_controls
 
 ----------------------
@@ -19,6 +20,22 @@ for i, key in ipairs(workspaces.names) do
 		default = (i == workspaces.default),
 	})
 end
+
+local function cycle_layout()
+	local current = hl.get_config("general.layout")
+
+	local next_index = 1
+	for i, layout in ipairs(layouts) do
+		if layout == current then
+			next_index = (i % #layouts) + 1
+			break
+		end
+	end
+
+	hl.config({ general = { layout = layouts[next_index] } })
+end
+
+hl.bind(keys.main_mod .. " + Space", cycle_layout)
 
 -----------------------
 ------- WINDOWS -------

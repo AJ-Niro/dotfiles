@@ -5,6 +5,10 @@ return {
 		default = 5,
 	},
 
+	layouts = {
+		order = { "dwindle", "monocle" },
+	},
+
 	-- KEYBOARD
 	keyboard = {
 		layout = "us",
