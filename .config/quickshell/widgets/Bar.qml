@@ -18,6 +18,10 @@ PanelWindow {
 
         Item { Layout.fillWidth: true }
 
+        WorkspaceWindows {
+          fontFamily: Theme.fontFamily
+        }
+
         Workspaces { fontFamily: Theme.fontFamily }
 
         Item { Layout.fillWidth: true }
