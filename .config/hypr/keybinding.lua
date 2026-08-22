@@ -24,7 +24,7 @@ end
 ----- APPLICATIONS -----
 ------------------------
 
-hl.bind(keys.main_mod .. " + Q", hl.dsp.exec_cmd(apps.terminal))
+hl.bind(keys.main_mod .. " + Return", hl.dsp.exec_cmd(apps.terminal))
 hl.bind(keys.main_mod .. " + E", hl.dsp.exec_cmd(apps.file_manager))
 hl.bind(keys.main_mod .. " + R", hl.dsp.exec_cmd(apps.launcher))
 
@@ -37,7 +37,7 @@ local closeWindowBind = hl.bind(keys.main_mod .. " + C", hl.dsp.window.close())
 closeWindowBind:set_enabled(true)
 
 -- Shutdown System
-hl.bind(keys.main_mod .. " + M", hl.dsp.exec_cmd(system_controls.shutdown))
+hl.bind(keys.main_mod .. " + SHIFT + Q", hl.dsp.exec_cmd(system_controls.shutdown))
 
 -- Windows Layouts
 hl.bind(keys.main_mod .. " + V", hl.dsp.window.float({ action = "toggle" }))
