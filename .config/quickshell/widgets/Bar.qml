@@ -32,5 +32,10 @@ PanelWindow {
           iconSize: Theme.fontSize + 2
         }
 
+        DateTime {
+          fontFamily: Theme.fontFamily
+        }
+
+
     }
 }
