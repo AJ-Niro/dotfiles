@@ -7,35 +7,56 @@ import "../components"
 
 PanelWindow {
   implicitHeight: Config.bar.height
-    color: Theme.background
+  color: Theme.background
 
-    anchors.top: true
-    anchors.left: true
-    anchors.right: true
+  anchors.top: true
+  anchors.left: true
+  anchors.right: true
 
-    RowLayout {
-        anchors.fill: parent
+  property int horizontalPadding: 12
+  property int sectionsSpacing: 12
 
-        Item { Layout.fillWidth: true }
+  Item {
+      anchors.fill: parent
+      anchors.leftMargin: horizontalPadding
+      anchors.rightMargin: horizontalPadding
 
-        WorkspaceWindows {
-          fontFamily: Theme.fontFamily
-        }
+      // --- Left section ---
+      RowLayout {
+          id: leftSection
+          anchors.left: parent.left
+          anchors.verticalCenter: parent.verticalCenter
+          spacing: sectionsSpacing
 
-        Workspaces { fontFamily: Theme.fontFamily }
+          WorkspaceWindows {
+              fontFamily: Theme.fontFamily
+          }
+      }
 
-        Item { Layout.fillWidth: true }
+      // --- Center section ---
+      RowLayout {
+          id: centerSection
+          anchors.centerIn: parent
+          spacing: sectionsSpacing
 
-        Battery {
-          fontFamily: Theme.fontFamily
-          fontSize: Theme.fontSize
-          iconSize: Theme.fontSize + 2
-        }
+          Workspaces { fontFamily: Theme.fontFamily }
+      }
 
-        DateTime {
-          fontFamily: Theme.fontFamily
-        }
+      // --- Right section ---
+      RowLayout {
+          id: rightSection
+          anchors.right: parent.right
+          anchors.verticalCenter: parent.verticalCenter
+          spacing: sectionsSpacing
 
-
-    }
+          Battery {
+              fontFamily: Theme.fontFamily
+              fontSize: Theme.fontSize
+              iconSize: Theme.fontSize + 2
+          }
+          DateTime {
+              fontFamily: Theme.fontFamily
+          }
+      }
+  }
 }
