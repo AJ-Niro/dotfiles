@@ -66,6 +66,13 @@ hl.env("HYPRCURSOR_SIZE", "20")
 require("animation")
 
 -- See https://wiki.hypr.land/Configuring/Layouts/Dwindle-Layout/ for more
+
+hl.config({
+	general = {
+		layout = "monocle",
+	},
+})
+
 hl.config({
 	dwindle = {
 		preserve_split = true, -- You probably want this
