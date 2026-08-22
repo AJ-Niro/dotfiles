@@ -30,6 +30,7 @@ return {
 	-- SYSTEM CONTROLS
 	system_controls = {
 		shutdown = "command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'",
+		screenshot = "hyprshot -m region --raw -s | satty --filename - --output-filename ~/Pictures/Screenshots/satty-$(date '+%Y%m%d-%H%M%S').png",
 		audio = {
 			raise_volume = "wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+",
 			lower_volume = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-",
