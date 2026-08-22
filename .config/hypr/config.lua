@@ -6,7 +6,9 @@ return {
 	},
 
 	layouts = {
-		order = { "dwindle", "monocle" },
+		order = { "monocle", "dwindle" },
+		dwindle = {},
+		monocle = {},
 	},
 
 	-- KEYBOARD

@@ -1,5 +1,6 @@
 local config = require("config")
 local apps = config.apps
+local layouts = config.layouts
 local workspaces = config.workspaces
 
 ------------------
@@ -65,19 +66,22 @@ hl.env("HYPRCURSOR_SIZE", "20")
 
 require("animation")
 
--- See https://wiki.hypr.land/Configuring/Layouts/Dwindle-Layout/ for more
+-----------------------
+------- LAYOUTS -------
+-----------------------
 
 hl.config({
 	general = {
-		layout = "monocle",
+		layout = layouts.order[1],
 	},
 })
 
-hl.config({
-	dwindle = {
-		preserve_split = true, -- You probably want this
-	},
-})
+-- Load layout configuration
+for _, name in ipairs(layouts.order) do
+	if next(layouts[name]) ~= nil then -- only call if there's something to set
+		hl.config({ [name] = layouts[name] })
+	end
+end
 
 ----------------
 ----  MISC  ----
