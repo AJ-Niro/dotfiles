@@ -20,6 +20,37 @@ for i, key in ipairs(workspaces.names) do
 	})
 end
 
+-----------------------
+------- WINDOWS -------
+-----------------------
+
+hl.bind(keys.main_mod .. " + Tab", hl.dsp.layout("cyclenext"))
+hl.bind(keys.main_mod .. " + SHIFT + Tab", hl.dsp.layout("cycleprev"))
+
+local function focus_window_by_index(n)
+	return function()
+		local ws = hl.get_active_workspace()
+		if ws == nil then
+			return
+		end
+
+		local windows = {}
+		for _, w in pairs(hl.get_windows()) do
+			if w.workspace ~= nil and w.workspace.id == ws.id then
+				table.insert(windows, w)
+			end
+		end
+
+		if windows[n] ~= nil then
+			hl.dispatch(hl.dsp.focus({ window = windows[n] }))
+		end
+	end
+end
+
+for i = 1, 9 do
+	hl.bind(keys.main_mod .. " + " .. i, focus_window_by_index(i))
+end
+
 ------------------------
 ----- APPLICATIONS -----
 ------------------------
