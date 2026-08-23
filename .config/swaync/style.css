@@ -1,0 +1,61 @@
+@import url("/etc/xdg/swaync/style.css");
+
+/*========== Tokyo Night ==========*/
+:root {
+  --cc-bg: rgba(26, 27, 38, 0.9);
+  --noti-border-color: rgba(192, 202, 245, 0.12);
+  --noti-bg: 31, 35, 53;
+  --noti-bg-alpha: 0.92;
+  --noti-bg-darker: rgb(21, 22, 30);
+  --noti-bg-hover: rgb(38, 43, 64);
+  --noti-bg-focus: rgba(65, 72, 104, 0.35);
+  --noti-close-bg: rgba(192, 202, 245, 0.08);
+  --noti-close-bg-hover: rgba(192, 202, 245, 0.15);
+  --text-color: #c0caf5;
+  --text-color-disabled: #414868;
+  --bg-selected: #7aa2f7;
+  --notification-icon-size: 48px;
+  --border-radius: 0px;
+  --font-size-body: 13px;
+  --font-size-summary: 14px;
+
+  /* urgency levels: low = info, normal = warning, critical = error */
+  --urgency-low: #7aa2f7;
+  --urgency-normal: #e0af68;
+  --urgency-critical: #f7768e;
+}
+
+* {
+  font-family: "CaskaydiaCove Nerd Font Propo";
+}
+
+.control-center {
+  border: 1px solid rgba(122, 162, 247, 0.25);
+}
+
+/* Urgency indicator: colored left border per notification level */
+.notification-row .notification-background .notification {
+  border-left: 4px solid transparent;
+}
+
+.notification-row .notification-background .notification.low {
+  border-left-color: var(--urgency-low);
+}
+
+.notification-row .notification-background .notification.normal {
+  border-left-color: var(--urgency-normal);
+}
+
+.notification-row .notification-background .notification.critical {
+  border-left-color: var(--urgency-critical);
+}
+
+/* Roomier padding inside each notification card */
+.notification-row .notification-background .notification .notification-default-action {
+  padding: 12px 14px;
+}
+
+/* Breathing room between the popup stack and the screen edge */
+.floating-notifications {
+  padding: 12px;
+}
