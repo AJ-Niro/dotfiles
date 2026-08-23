@@ -35,6 +35,13 @@ hl.window_rule({
 -- })
 -- overlayLayerRule:set_enabled(false)
 
+-- Dim the desktop behind rofi so it reads as a floating window
+hl.layer_rule({
+	name = "rofi-floating",
+	match = { namespace = "^rofi$" },
+	dim_around = true,
+})
+
 -- Hyprland-run windowrule
 hl.window_rule({
 	name = "move-hyprland-run",
