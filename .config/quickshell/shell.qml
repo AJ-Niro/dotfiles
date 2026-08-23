@@ -12,4 +12,9 @@ Scope {
     fontFamily: Theme.fontFamily
     fontSize: Theme.fontSize
   }
+  VolumeOSD {
+    anchorWindow: bar
+    fontFamily: Theme.fontFamily
+    fontSize: Theme.fontSize
+  }
 }
