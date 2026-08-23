@@ -25,6 +25,7 @@ return {
 		quickshell = "qs",
 		file_manager = "nautilus",
 		launcher = "rofi -show drun",
+		notification_center = "swaync",
 	},
 
 	-- SYSTEM CONTROLS

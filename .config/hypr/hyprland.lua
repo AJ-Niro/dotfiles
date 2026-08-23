@@ -26,6 +26,7 @@ hl.monitor({
 --
 hl.on("hyprland.start", function()
 	hl.exec_cmd(apps.quickshell)
+	hl.exec_cmd(apps.notification_center)
 	hl.dispatch(hl.dsp.focus({ workspace = workspaces.default }))
 	hl.exec_cmd(apps.terminal)
 	--   hl.exec_cmd("nm-applet")
