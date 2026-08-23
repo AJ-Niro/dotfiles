@@ -28,21 +28,11 @@ return {
       },
     },
     keys = {
-      -- Toggle terminals in different directions
-      { "<C-\\>", "<cmd>ToggleTerm direction=float<cr>", desc = "Toggle floating terminal", mode = { "n", "t" } },
-      { "<leader>th", "<cmd>ToggleTerm direction=horizontal<cr>", desc = "Toggle horizontal terminal" },
-      { "<leader>tv", "<cmd>ToggleTerm direction=vertical<cr>", desc = "Toggle vertical terminal" },
-      { "<leader>tf", "<cmd>ToggleTerm direction=float<cr>", desc = "Toggle floating terminal" },
-      { "<leader>tt", "<cmd>ToggleTerm direction=tab<cr>", desc = "Toggle terminal (fullscreen tab)" },
-
       -- Multiple terminals (numbered)
       { "<leader>t1", "<cmd>1ToggleTerm<cr>", desc = "Toggle terminal 1" },
       { "<leader>t2", "<cmd>2ToggleTerm<cr>", desc = "Toggle terminal 2" },
       { "<leader>t3", "<cmd>3ToggleTerm<cr>", desc = "Toggle terminal 3" },
       { "<leader>t4", "<cmd>4ToggleTerm<cr>", desc = "Toggle terminal 4" },
-
-      -- Toggle all terminals
-      { "<leader>ta", "<cmd>ToggleTermToggleAll<cr>", desc = "Toggle all terminals" },
     },
   },
 }

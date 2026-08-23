@@ -1,0 +1,85 @@
+/* ---- Tokyo Night palette ---- */
+@define-color tn_bg        #1a1b26;
+@define-color tn_bg_dark   #16161e;
+@define-color tn_bg_alt    #24283b;
+@define-color tn_bg_hover  #292e42;
+@define-color tn_fg        #c0caf5;
+@define-color tn_fg_dim    #a9b1d6;
+@define-color tn_border    #414868;
+@define-color tn_blue      #7aa2f7;
+@define-color tn_blue_dark #3d59a1;
+@define-color tn_cyan      #7dcfff;
+@define-color tn_purple    #bb9af7;
+@define-color tn_green     #9ece6a;
+@define-color tn_orange    #ff9e64;
+@define-color tn_red       #f7768e;
+
+/* ---- Base window ---- */
+window {
+  background-color: @tn_bg;
+  color: @tn_fg;
+}
+
+/* ---- Outer container ---- */
+.outer_box {
+  background-color: alpha(@tn_bg, 0.93);
+}
+
+/* ---- Toolbars ---- */
+.toolbar {
+  background-color: alpha(@tn_bg_dark, 0.93);
+  color: @tn_fg;
+  border-color: @tn_bg_hover;
+}
+
+.toolbar separator {
+  background-color: @tn_bg_hover;
+}
+
+/* ---- Buttons ---- */
+.toolbar button {
+  background-color: transparent;
+  color: @tn_fg_dim;
+  border-radius: 6px;
+}
+
+.toolbar button:hover {
+  background-color: @tn_bg_hover;
+  color: @tn_fg;
+}
+
+.toolbar button:checked,
+.toolbar button:active {
+  background-color: @tn_blue_dark;
+  color: #ffffff;
+}
+
+/* ---- Entry fields ---- */
+entry {
+  background-color: @tn_bg_alt;
+  color: @tn_fg;
+  border-color: @tn_border;
+  caret-color: @tn_blue;
+}
+
+/* ---- Sliders ---- */
+scale trough {
+  background-color: @tn_border;
+}
+
+scale trough highlight {
+  background-color: @tn_blue;
+}
+
+/* ---- Popovers ---- */
+popover {
+  background-color: @tn_bg;
+  color: @tn_fg;
+  border: 1px solid @tn_bg_hover;
+}
+
+/* ---- Tooltips ---- */
+tooltip {
+  background-color: @tn_bg_dark;
+  color: @tn_fg;
+}
