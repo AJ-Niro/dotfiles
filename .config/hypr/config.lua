@@ -27,6 +27,7 @@ return {
 		launcher = "rofi -show drun",
 		notification_center = "swaync",
 		wallpaper = "hyprpaper",
+		clip_persist = "wl-clip-persist --clipboard both",
 	},
 
 	-- SYSTEM CONTROLS
