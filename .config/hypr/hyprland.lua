@@ -25,6 +25,7 @@ hl.monitor({
 -- Or execute your favorite apps at launch like this:
 --
 hl.on("hyprland.start", function()
+	hl.exec_cmd(apps.wallpaper)
 	hl.exec_cmd(apps.quickshell)
 	hl.exec_cmd(apps.notification_center)
 	hl.dispatch(hl.dsp.focus({ workspace = workspaces.default }))
