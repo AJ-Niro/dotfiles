@@ -24,7 +24,7 @@ return {
 		terminal = "kitty",
 		quickshell = "qs",
 		file_manager = "nautilus",
-		launcher = "rofi -show run",
+		launcher = "rofi -show drun",
 	},
 
 	-- SYSTEM CONTROLS
