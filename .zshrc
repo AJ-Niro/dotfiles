@@ -45,13 +45,9 @@ bindkey "\e[1;5D" backward-word  # Ctrl + ←
 bindkey "\e[H" beginning-of-line  # Home
 bindkey "\e[F" end-of-line        # End
 
-# Oh My Posh (cached — avoids subprocess on every shell start)
+# Oh My Posh
 export PATH="$PATH:$HOME/.local/bin"
-_OMP_CACHE="$HOME/.cache/omp_init.zsh"
-if [[ ! -f "$_OMP_CACHE" || "${XDG_CONFIG_HOME:-$HOME/.config}/oh-my-posh/ohmyposh.json" -nt "$_OMP_CACHE" ]]; then
-  oh-my-posh init zsh --config "${XDG_CONFIG_HOME:-$HOME/.config}/oh-my-posh/ohmyposh.json" > "$_OMP_CACHE"
-fi
-source "$_OMP_CACHE"
+eval "$(oh-my-posh init zsh --config "${XDG_CONFIG_HOME:-$HOME/.config}/oh-my-posh/ohmyposh.json")"
 
 # Shell integrations
 eval "$(fzf --zsh)"
