@@ -75,7 +75,7 @@ end
 hl.bind(keys.main_mod .. " + Return", hl.dsp.exec_cmd(apps.terminal))
 hl.bind(keys.main_mod .. " + E", hl.dsp.exec_cmd(apps.file_manager))
 hl.bind(keys.main_mod .. " + R", hl.dsp.exec_cmd(apps.launcher))
-hl.bind(keys.main_mod .. " + N", hl.dsp.exec_cmd("swaync-client -t -sw"))
+hl.bind(keys.main_mod .. " + N", hl.dsp.exec_cmd(system_controls.notification_center.toggle))
 
 ----------------------
 ------- SYSTEM -------

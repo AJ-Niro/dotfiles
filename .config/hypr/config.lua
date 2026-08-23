@@ -49,5 +49,8 @@ return {
 			previous = "playerctl previous",
 			play_pause = "playerctl play-pause",
 		},
+		notification_center = {
+			toggle = "swaync-client -t -sw",
+		},
 	},
 }
